@@ -1,15 +1,48 @@
-# Arduino
+# Prácticas con Arduino
 
-Arduino es una plataforma de creación de electrónica de código abierto, la cual está basada en hardware y software libre, flexible y fácil de utilizar para los creadores y desarrolladores. 
+Repositorio de ejercicios introductorios de electrónica y programación con Arduino. Cada práctica es independiente y combina un sketch, cuando está disponible, con archivos gráficos del circuito.
 
-El Arduino es una placa basada en un microcontrolador ATMEL. Los microcontroladores son circuitos integrados en los que se pueden grabar instrucciones, las cuales las escribes con el lenguaje de programación que puedes utilizar en el entorno Arduino IDE. Estas instrucciones permiten crear programas que interactúan con los circuitos de la placa.
+## Stack y tecnologías
 
-El microcontrolador de Arduino posee lo que se llama una interfaz de entrada, que es una conexión en la que podemos conectar en la placa diferentes tipos de periféricos. La información de estos periféricos que conectes se trasladará al microcontrolador, el cual se encargará de procesar los datos que le lleguen a través de ellos.
+- **Plataforma:** Arduino y su entorno Arduino IDE.
+- **Lenguaje:** sketches `.ino` escritos en C++ y basados en las funciones de Arduino (`setup()` y `loop()`).
+- **Entradas y salidas:** lectura digital y analógica, control de salidas, comunicación serial y generación de tonos.
+- **Librerías utilizadas:** `Servo`, `Keypad`, `LiquidCrystal`, `IRremote`, `Adafruit NeoPixel`, `DHT11` y `SoftwareSerial`. La práctica de relé y motor también muestra acceso directo a registros AVR con `avr/io.h`.
+- **Recursos de hardware:** imágenes `.png`, archivos de placas `.brd` y un proyecto `.fzz` para consultar el montaje de los componentes.
 
-El tipo de periféricos que puedas utilizar para enviar datos al microcontrolador depende en gran medida de qué uso le estés pensando dar. Pueden ser cámaras para obtener imágenes, teclados para introducir datos, o diferentes tipos de sensores.
+No hay un único proyecto compilable desde la raíz: cada carpeta se trabaja por separado. Abrí el archivo `.ino` de la práctica en Arduino IDE, seleccioná la placa correspondiente y agregá las librerías externas que esa práctica incluya.
 
-También cuenta con una interfaz de salida, que es la que se encarga de llevar la información que se ha procesado en el Arduino a otros periféricos. Estos periféricos pueden ser pantallas o altavoces en los que reproducir los datos procesados, pero también pueden ser otras placas o controladores.
+## Prácticas y funcionalidades
 
-Arduino es un proyecto y no un modelo concreto de placa, lo que quiere decir que compartiendo su diseño básico te puedes encontrar con diferentes tipos de placas. Las hay de varias formas, tamaños y colores para a las necesidades del proyecto en el que estés trabajando, las hay sencillas o con características mejoradas, Arduinos orientados al Internet de las Cosas, la impresión 3D, etc.
+### Componentes y salidas
 
-Además, las placas Arduino también cuentan con otro tipo de componentes llamados Escudos (Shields) o mochilas. Se trata de una especie de placas que se conectan a la placa principal para añadirle una infinidad de funciones, como GPS, relojes en tiempo real, conectividad por radio, pantallas táctiles LCD, placas de desarrollo y muchas cosas más.
+- [Adding Components](adding_components1/), [Wiring Components](wiring_components1/) y [Start Simulating](start_simulating1/): recursos de circuito para las prácticas de incorporación de componentes, cableado y simulación.
+- [Editing Components](editing_components1/): secuencia de luces tipo semáforo con tres LED.
+- [Pulsador y LED](pulsador_led1/): lectura de un pulsador para controlar un LED.
+- [Interruptor](interruptor1/) y [Slide Switch](slide_switch1/): prácticas de entradas con interruptor; la segunda cambia la combinación de colores de un LED RGB.
+- [LED RGB](rgb_led1/): control de los canales rojo, verde y azul.
+- [Display de 7 segmentos](display_de_7_segmentos1/): control de los segmentos para mostrar dígitos.
+
+### Sensores y lecturas
+
+- [Fotoresistor](fotoresistor1/): lectura de luz y control de un LED según el valor medido.
+- [Sensor de gas](gas_sensor1/): lectura del sensor, aviso por puerto serial y señal acústica al detectar gas.
+- [Humedad y temperatura](humedad_y_temperatura1/): lectura de un sensor DHT11 y salida de datos por serial.
+- [PIR](pir1/): detección de movimiento combinada con una lectura de luz para controlar una lámpara.
+- [Potenciómetro](potenci_metro1/): lectura analógica y visualización del valor por serial.
+- [Alarma ultrasónica](ultras_nico_alarma1/): medición de distancia, reporte serial y señalización con LED y buzzer al acercarse un objeto.
+
+### Actuadores y sonido
+
+- [Microservo](microservo1/): barrido del servo entre 0° y 180°.
+- [Relé y motor DC](relay_y_motor_dc1/): ejemplo de control de salida mediante registros AVR.
+- [Piezo buzzer](piezo_buzzer1/): generación de tonos.
+- [Marcha Imperial](marcha_imperial1/) y [Star Wars con piezo buzzer](star_wars_piezo_buzzer1/): reproducción de melodías con un buzzer.
+- [NeoPixels](neopixels1/): control de una tira o conjunto de LED direccionables.
+
+### Interfaces y comunicación
+
+- [LCD](lcd1/): escritura de texto en una pantalla LCD de 16×2.
+- [Teclado](teclado1/): lectura de teclas de un keypad matricial y envío por serial.
+- [Control remoto IR](ir_remoto1/): recepción de comandos infrarrojos para controlar LED.
+- [Módulo Bluetooth](bluetooth_module1/): comunicación serial entre el módulo Bluetooth y el monitor serial.
